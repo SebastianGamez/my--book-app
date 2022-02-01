@@ -1,0 +1,120 @@
+:root{
+    --sans:'Open Sans', sans-serif;
+    --roboto:'Roboto', sans-serif;
+    --bebas:'Bebas Neue', cursive;
+    --realblack:#202020;
+    --realgreen:#25a18e;
+    --greenlight:#7ae582;
+    --realwhite:#f7fff7;
+    --realgray:#333533;
+    --graylight:#d6d6d6;
+}
+.main__searcher--container{
+    position: absolute;
+    top: 90px;
+    z-index: 1;
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searcher__books--container{
+    width: 320px;
+    height: 360px;
+    background-color: var(--realwhite);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: var(--realgray) 0px 2px 10px 4px;
+    transition: 0.7s;
+}
+.searcher__books--container:hover{
+    margin-bottom: 7px;
+}
+.books__form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form__books--conatiner{
+    width: 65%;
+}
+.books__input{
+    width: 100%;
+    height: 50px;
+    margin: 0px 0px 0px 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-bottom: 1px solid var(--realgray);
+    outline: none;
+    font-size: 1.6rem;
+    color: var(--realblack);
+}
+.form__submit--container{
+    width: 20%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+.submit__button--form{
+    height: 100%;
+    width: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 10px 0px 0px;
+    background-color: var(--greenlight);
+}
+.button__image--submit{
+    width: 81%;
+    height: 80%;
+    background-image: url("../assets/icons/search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.books__results--container{
+    width: 100%;
+    margin: 10px 0px 0px 20px;
+    overflow-y: scroll;
+}
+.results__list{
+    list-style: none;
+}
+.list__books--container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.books__list--results{
+    width: 50%;
+    margin: 25px;
+    font-size: 1.6rem;
+    color: var(--realblack);
+    cursor: pointer;
+}
+.books__reserve, .books__renew{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.books__reserve{
+    background-image: url("../assets/icons/reserve.png");
+}
+.books__renew{
+    background-image: url("../assets/icons/renew.png");
+}
+
+@media (min-width:1024px){
+    .searcher__books--container{
+        width: 500px;
+        height: 450px;
+    }
+}

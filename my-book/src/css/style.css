@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --sans:'Open Sans', sans-serif;
+    --roboto:'Roboto', sans-serif;
+    --bebas:'Bebas Neue', cursive;
+    --realblack:#202020;
+    --realgreen:#25a18e;
+    --greenlight:#7ae582;
+    --realwhite:#f7fff7;
+    --realgray:#333533;
+    --graylight:#d6d6d6;
+}
+*{
+    box-sizing: border-box;
+    margin:0%;
+    border:0%;
+    padding: 0%;
+}
+html{
+    font-family: var(--roboto);
+    font-size: 62.5%;
+    color: white;
+    width: 100%;
+}
+.html-body{
+    background-image: url("../assets/img/fondo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.body-main{
+    font-family: var(--roboto);
+    font-size: 62.5%;
+    color: white;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+/*Aquí comienza el cabecero*/
+
+
+.body-header--container{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    background-color: var(--realblack);
+    display: flex;
+    flex-direction: column;
+    box-shadow:var(--realgray) 0px 4px 40px 10px;
+}
+.header-menu--container{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+}
+.header-menu--responsive{
+    display: none;
+}
+.menu-button-container{
+    display: none;
+}
+.menu-nav--container, .menu-nav--active{
+    width: 50%;
+    margin: 0px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.nav__home, .nav__account, .nav__about, .nav__login{
+    margin: 0px;
+    padding: 26px 20px;
+    font-family: var(--sans);
+    font-size: 1.2rem;
+    color: var(--graylight);
+    text-decoration: none;
+    transition: 0.5s;
+}
+.nav__home:hover, .nav__account:hover, .nav__about:hover, .nav__login:hover{
+    background-color: var(--realgray);
+}
+.active{
+    margin: 0px;
+    padding: 26px 20px;
+    font-family: var(--sans);
+    font-size: 1.2rem;
+    background-color: var(--realgray);
+    color: var(--graylight);
+    text-decoration: none;
+}
+.menu-logo--container{
+    width: 50%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo__principal-logo{
+    margin: 135px;
+    width: 120px;
+    height: 70px;
+    background-image: url("../assets/img/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*Aquí comienza el cabecero de redes*/
+
+
+.header-network__menu--container{
+    width: 100%;
+    height: 20px;
+    background-color: var(--realgreen);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.network__menu-sentece--container{
+    width: 50%;
+    height: 20px;
+    margin: 0px 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.sentence__title{
+    font-size: var(--sans);
+    color: var(--realgray);
+    font-size: 1.4rem;
+}
+.network__menu-nav--container{
+    width: 50%;
+    height: 100%;
+    padding: 0px 108px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu__nav-facebook--container{
+    width:20px;
+    height: 20px;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.facebook__logo{
+    width: 15px;
+    height:15px;
+    background-image: url("../assets/icons/facebook.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu__nav-instagram--container{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.instagram__logo{
+    width: 15px;
+    height:15px;
+    background-image: url("../assets/icons/instagram.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu__nav-twitter--container{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.twitter__logo{
+    width: 15px;
+    height:15px;
+    background-image: url("../assets/icons/twitter.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu__nav-whatsapp--container{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.whatsapp__logo{
+    width: 15px;
+    height:15px;
+    background-image: url("../assets/icons/whatsapp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Aquí comienza el contenido*/
+
+.body__main{
+    height: 76vh;
+    width: 100%;
+}
+.main__home{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home__title--container{
+    height: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3335337d;
+    border-radius: 15px;
+    transition: 0.7s;
+}
+.home__title--container:hover{
+    margin-bottom: 7px;
+}
+.title__title--home{
+    font-family: var(--bebas);
+    font-weight: bold;
+    font-size: 8.8rem;
+    color: var(--greenlight);
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 0.5s;
+}
+    @keyframes float {
+        100%{
+            margin-bottom: 10px;
+        }
+    }
+
+/*media queries*/
+@media (max-width: 1024px){
+    .header-network__menu--container{
+        justify-content: space-between;
+    }
+    .network__menu-sentece--container{
+        margin: 0px 0px 0px 30px;
+    }
+    .network__menu-nav--container{
+        margin: 0px 30px 0px 0px;
+        padding: 0px;
+    }
+    .menu-logo--container{
+        width: auto;
+    }
+    .logo__principal-logo{
+        margin:55px;
+    }
+    .header-menu--container{
+        display: none;
+    }
+    .header-menu--responsive{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .menu-button--container{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 70px;
+        background-color: var(--realblack);
+    }
+    .button__image{
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 50px;
+        height: 50px;
+        background-image: url("../assets/icons/list.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .button__image--selected{
+        transform: rotate(180deg);
+    }
+    .menu-nav--container{
+        height:calc(100vh - 70px);
+        width: 300px;
+        position: absolute;
+        margin: 0px;
+        top: 70px;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: 0.5s;
+        background-color: #20202079;
+    }
+    .menu-nav--active{
+        height:calc(100vh - 90px);
+        width: 300px;
+        position: absolute;
+        margin: 0px;
+        top: 70px;
+        flex-direction: column;
+        transform: translateX(0);
+        transition: 0.5s;
+        background-color: #202020b7;
+        border-radius: 0px 0px 30px 0px;
+        box-shadow: 6px 11px 15px 5px #000000;
+    }
+    .nav__home--responsive, .nav__account--responsive, .nav__about--responsive, .nav__login--responsive{
+        margin: 0px;
+        padding: 26px 20px;
+        font-family: var(--sans);
+        font-size: 1.2rem;
+        color: var(--graylight);
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    .nav__home--responsive:hover, .nav__account--responsive:hover, .nav__about--responsive:hover, .nav__login--responsive:hover{
+        background-color: #3c3c3cbc;
+    }
+    .active{
+        margin: 0px;
+        padding: 26px 20px;
+        font-family: var(--sans);
+        font-size: 1.2rem;
+        background-color: #3c3c3cbc;        
+        color: var(--graylight);
+        text-decoration: none;
+    }
+    .home__title--container{
+        background-color: #33353300;
+    }
+    .title__title--home{
+        text-shadow: 9px 9px 8px #000000;
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "exemplars":[
+        {
+            "title" : "Cien años de soledad",
+            "author" : "Gabriel García Márquez",
+            "state" : "ready"
+        },
+        {
+            "title" : "El coronel no tiene quien le escriba",
+            "author" : "Gabriel García Márquez",
+            "state" : "ready"
+        },
+        {
+            "title" : "Los funerales de la mamá grande",
+            "author" : "Gabriel García Márquez",
+            "state" : "ready"
+        },
+        {
+            "title" : "Rayuela",
+            "author" : "Julio Cortázar",
+            "state" : "ready"
+        },
+        {
+            "title" : "Las venas abiertas de Amercica latina",
+            "author" : "Eduardo Galeano",
+            "state" : "ready"
+        },
+        {
+            "title" : "Pedro Páramo",
+            "author" : "Juan Rulfo",
+            "state" : "ready"
+        }
+    ]
+}
