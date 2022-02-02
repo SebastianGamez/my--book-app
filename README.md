@@ -1,5 +1,5 @@
 My-book es una aplicación web, creada con el stack MERN. En esta app puedes ver tu historial de préstamo, 
-reservar libros y también cancelar los mismos. El lado del servidor esta desarrollado con react; el backend con node y express; 
+reservar libros y también cancelar los mismos. El lado del cliente esta desarrollado con react; el backend con node y express; 
 la base de datos es mongoDB, implementada con mongoose.
 
 
