@@ -5,7 +5,7 @@ la base de datos es mongoDB, implementada con mongoose.
 
 
 
-PASOS PARA SU FUNCIONAMIENTO (MODO DESARROLLO).
+PASOS PARA SU INSTALACIÓN.
 
 
 
