@@ -1,5 +1,6 @@
 //modules imported
 const express = require("express");
+const tokenVerifycation = require("../middlewares/tokenVerification");
 const Books =  require("../models/books_model");
 const Users =  require("../models/user__model");
 const { History } =  require("../models/history__model");
@@ -20,15 +21,12 @@ loans.get("/", async(req, res) => {
         .catch(err => res.status(404).json(err));
 
 });
-loans.get("/history/:userId", (req, res) => {
+loans.get("/history/:userId", async(req, res) => {
 
-    (async(req, res) => {
+    await Users.findById(req.params.userId)
+        .then(solve => res.json(solve.history))
+        .catch(err => res.status(404).json(err));
 
-        await Users.findById(req.params.userId)
-            .then(solve => res.json(solve.history))
-            .catch(err => res.status(404).json(err));
-
-    })(req, res);
 
 });
 loans.get("/search/:title", async(req, res) => {
@@ -40,7 +38,7 @@ loans.get("/search/:title", async(req, res) => {
         .catch(err => res.status(404).json(err));
 
 });
-loans.put("/reserve/:title/:userId", async(req, res) => {
+loans.put("/reserve/:title/:userId", tokenVerifycation, async(req, res) => {
 
     Books.findOneAndUpdate(
         {$and: [{state: "ready"}, {title: req.params.title}]},
@@ -78,7 +76,7 @@ loans.put("/reserve/:title/:userId", async(req, res) => {
     );
     
 });
-loans.put("/cancel/reserve/:id", async(req, res) => {
+loans.put("/cancel/reserve/:id", tokenVerifycation, async(req, res) => {
 
     await Users.findById(req.body.userId)
         .then(result => {

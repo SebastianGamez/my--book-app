@@ -19,10 +19,11 @@ export const MyLoans = () => {
         
     e.preventDefault();
     
-    
     const data = {
       userId: sessionStorage.getItem("id"),
-      title: e.target.id.split("&&&")[1]
+      title: e.target.id.split("&&&")[1],
+      token: sessionStorage.getItem("token")
+
     }
 
     fetch(`http://localhost:4000/my-book/loans/cancel/reserve/${e.target.id.split("&&&")[0]}`, {

@@ -14,7 +14,7 @@ export const NewLoan = () => {
         .then( result => result.json())
         .then(setBooks);
 
-    }, [books]);
+    }, []);
     
     const handleOnsubmit = (e) => {
         e.preventDefault()
@@ -50,7 +50,8 @@ export const NewLoan = () => {
 
         const data = {
             date: new Date().toDateString(),
-            newDate: borrowedEnd().toDateString()
+            newDate: borrowedEnd().toDateString(),
+            token: sessionStorage.getItem("token"),
         }
     
         fetch(`http://localhost:4000/my-book/loans/reserve/${e.target.id}/${sessionStorage.getItem("id")}`, {
@@ -65,7 +66,9 @@ export const NewLoan = () => {
     
                 console.log(solve);
                 alert(`Book reserved: ${solve.title}`);
-                setBooks([]);
+                fetch("http://localhost:4000/my-book/loans")
+                    .then( result => result.json())
+                    .then(setBooks);
     
             });
     

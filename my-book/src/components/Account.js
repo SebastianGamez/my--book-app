@@ -6,7 +6,6 @@ import "../css/account.css";
 export const Account = () => {
   
   
-  
   return <div className="body-main">
 
     <section className="main__account">

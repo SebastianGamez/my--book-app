@@ -1,5 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 export const About = () => {
-  return <div></div>;
+  return <Redirect to="/my-book/home" />;
 };

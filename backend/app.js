@@ -3,7 +3,6 @@ const express = require("express");
 const db = require("mongoose");
 const login = require("./routes/login");
 const register = require("./routes/register");
-const account = require("./routes/account");
 const loans = require("./routes/loans");
 
 const cors = require("cors");
@@ -15,7 +14,6 @@ const app = express();
     app.use(cors());
     app.use("/my-book/login", login);
     app.use("/my-book/register", register);
-    app.use("/my-book/account", account);
     app.use("/my-book/loans", loans);
 
 //datebase configuration    
