@@ -18,7 +18,7 @@ PASOS PARA SU FUNCIONAMIENTO (MODO DESARROLLO).
   
   -Crear una base de datos llamada "my-book" en el puerto 27017, puedes cambiar el puerto en el archivo "/backend/app.js".
   
-  -Agregar libros a una nueva colección llamada "books" (Un documento por cada libro; en el archivo "/backend/json/books.json" puedes encontrar ejemplos de libros y el formato de cada documento).
+  -Agrega libros a una nueva colección llamada "books" (Un documento por cada libro; en el archivo "/backend/json/books.json" puedes encontrar ejemplos de libros y el formato de cada documento).
   
   
 2). Preparación del servidor 
