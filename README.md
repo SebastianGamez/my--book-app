@@ -41,7 +41,7 @@ PASOS PARA SU FUNCIONAMIENTO (MODO DESARROLLO).
   -Abre en el navegador http://localhost:8080/.
   
   
- 4) ¡LISTO!
+4). ¡LISTO!
   
   
   
