@@ -13,7 +13,7 @@ import { Account } from './components/Account';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
 import { Home } from './components/Home';
-import { AuthComponent } from './AuthComponent';
+import { AuthComponent } from './components/AuthComponent';
 
 export const MyBookRouter = () => {
 

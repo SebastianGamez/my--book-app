@@ -4,8 +4,10 @@ const db = require("mongoose");
 const login = require("./routes/login");
 const register = require("./routes/register");
 const loans = require("./routes/loans");
-
 const cors = require("cors");
+
+//config
+const { database } = require("./config/index");
 
 //express
 const app = express();
@@ -17,14 +19,14 @@ const app = express();
     app.use("/my-book/loans", loans);
 
 //datebase configuration    
-const connectToDatebase = () => {
+const connectToDatabase = () => {
 
-    db.connect("mongodb://localhost:27017/my-book")
+    db.connect(`${ database }`)
         .then(() => console.log("\tDatabase connected"))
         .catch((err) => console.log(`\tOcurred an error connecting the datebase:\n${err}`));
 
 }
-connectToDatebase();
+connectToDatabase();
 
 //port configuration
 

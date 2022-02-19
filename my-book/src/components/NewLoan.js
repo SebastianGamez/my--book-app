@@ -1,82 +1,18 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { handleOnsubmitNewLoan } from '../helpers/handleOnSubmit';
+import { reserveBook } from '../helpers/reserveBook';
+import { doFetch } from '../helpers/doFetch';
+import { server } from '../config/index';
 
 import "../css/newLoan.css";
 
 export const NewLoan = () => {
-  
+
     const [inputValue, setInputValue] = useState("");
     const [books, setBooks] = useState([]);
 
-    useEffect(() => {
-      
-        fetch("http://localhost:4000/my-book/loans")
-        .then( result => result.json())
-        .then(setBooks);
-
-    }, []);
-    
-    const handleOnsubmit = (e) => {
-        e.preventDefault()
-
-        fetch(`http://localhost:4000/my-book/loans/search/${inputValue}`)
-        .then( result => result.json())
-        .then(result => {
-
-            if (result){
-                
-                let results = [result]
-                setBooks(results);
-
-            }else{
-                setBooks([]);
-            }
-
-        });
-
-    }
-
-    const reserveBook = e => {
-        
-        e.preventDefault()
-    
-        let borrowedEnd = () => {
-
-           let res = new Date();
-           res.setDate(res.getDate() + 7)
-           return res
-
-        }
-
-        const data = {
-            date: new Date().toDateString(),
-            newDate: borrowedEnd().toDateString(),
-            token: sessionStorage.getItem("token"),
-        }
-    
-        fetch(`http://localhost:4000/my-book/loans/reserve/${e.target.id}/${sessionStorage.getItem("id")}`, {
-            method: 'PUT',
-            body: JSON.stringify(data),
-            headers:{
-              'Content-Type': 'application/json'
-            }
-          })
-            .then( result => result.json())
-            .then( solve =>{
-    
-                console.log(solve);
-                alert(`Book reserved: ${solve.title}`);
-                fetch("http://localhost:4000/my-book/loans")
-                    .then( result => result.json())
-                    .then(setBooks);
-    
-            });
-    
-    }
-    
-    const handleOnchange = (e) => {
-        setInputValue(e.target.value)
-    }
+    useEffect(() => {doFetch(`${ server }/my-book/loans`).then(({ solve }) => setBooks(solve))}, [books]);
   
     return <div className="body-main">
       
@@ -89,11 +25,11 @@ export const NewLoan = () => {
                             className="books__input"
                             placeholder="Search a book"
                             value={ inputValue }
-                            onChange = { handleOnchange }
+                            onChange = { e => setInputValue(e.target.value) }
                             />
                         </div>
                         <div className="form__submit--container">
-                            <button className="submit__button--form" onClick={ handleOnsubmit } >
+                            <button className="submit__button--form" onClick={ e => handleOnsubmitNewLoan(e, inputValue, setBooks) } >
                                 <span className="button__image--submit"></span>
                             </button>
                         </div>
@@ -105,7 +41,7 @@ export const NewLoan = () => {
 
                                 return <div className="list__books--container" key={_id}>
                                 <li className="books__list--results" key={_id} >{title}</li>
-                                <span className="books__reserve" alt="Reserve the book" id={title} onClick={ reserveBook } ></span>
+                                <span className="books__reserve" alt="Reserve the book" id={title} onClick={ (e) => reserveBook(e, setBooks) } ></span>
                             </div>
 
                             })}

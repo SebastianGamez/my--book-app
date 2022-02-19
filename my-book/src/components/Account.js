@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 import "../css/account.css";
 
 export const Account = () => {
-  
-  
+
   return <div className="body-main">
 
     <section className="main__account">
       
       <div className="account__welcome--container">
-        <h3 className="welcome__title">Welcome, {sessionStorage.getItem("username")}</h3>
+        <h3 className="welcome__title">Welcome, { sessionStorage.getItem("username") }</h3>
       </div>
       
       <div className="account__options--container">

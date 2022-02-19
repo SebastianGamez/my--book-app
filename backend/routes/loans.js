@@ -65,10 +65,9 @@ loans.put("/reserve/:title/:userId", tokenVerifycation, async(req, res) => {
 
             })
 
-            Users.findByIdAndUpdate(req.params.userId, {$push:{history: newHistory}}, (err, solve) => {
+            Users.findByIdAndUpdate(req.params.userId, {$push:{history: newHistory}}, err => {
 
                 if(err) return res.status(404).json(err);
-                console.log(solve);
 
             });
 
@@ -84,10 +83,10 @@ loans.put("/cancel/reserve/:id", tokenVerifycation, async(req, res) => {
             result.history.id(req.params.id).state = "cancelled";
             result.save();
             
-            Books.findOneAndUpdate({title: req.body.title}, {state: "ready"}, {new: true}, (err, solve) => {
+            Books.findOneAndUpdate({title: req.body.title}, {state: "ready"}, {new: true}, (err) => {
         
                 if (err) return res.status(404).json(err);
-                console.log(solve);
+                res.json("Reserve cancelled");
         
             });
 

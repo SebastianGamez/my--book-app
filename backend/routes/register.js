@@ -48,11 +48,8 @@ async function createUser (req, res){
                     (async(res)=> {
 
                         await User.save()
-                            .then(result => {
-
-                                console.log(`User saved succesfully:\n ${result}`);
-
-                            }).catch(err => {
+                            .then( () => res.json(`You are registred`))
+                            .catch(err => {
                                 
                                 console.log("Ocurred an error saving the user at the datebase");
                                 res.status(404).json({
@@ -63,13 +60,9 @@ async function createUser (req, res){
 
                             })
 
-                    })(res)
+                    })(res);
                     
                 });
-        
-
-    
-
     
 }
 

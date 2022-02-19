@@ -1,43 +1,20 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { cancelReserveBook } from '../helpers/cancelReserveBook';
+import { doFetch } from '../helpers/doFetch';
+import { server } from '../config/index';
 
 import "../css/myLoans.css";
 
 export const MyLoans = () => {
-
+  
   const [histories, setHistories] = useState([]);
 
   useEffect(() => {
-      
-    fetch(`http://localhost:4000/my-book/loans/history/${sessionStorage.getItem("id")}`)
-    .then( result => result.json())
-    .then(setHistories);
+    
+    doFetch(`${ server }/my-book/loans/history/${sessionStorage.getItem("id")}`).then( ({ solve }) => setHistories(solve));
 
   }, [histories]);
-
-  const cancelReserveBook = e => {
-        
-    e.preventDefault();
-    
-    const data = {
-      userId: sessionStorage.getItem("id"),
-      title: e.target.id.split("&&&")[1],
-      token: sessionStorage.getItem("token")
-
-    }
-
-    fetch(`http://localhost:4000/my-book/loans/cancel/reserve/${e.target.id.split("&&&")[0]}`, {
-        method: 'PUT',
-        body: JSON.stringify(data),
-        headers:{
-          'Content-Type': 'application/json'
-        }
-      });
-
-      alert("Reserve cancelled");
-      setHistories([]);
-
-  }
 
   return <div className="body-main">
     <section className="main__history--container">
@@ -61,7 +38,13 @@ export const MyLoans = () => {
                 <td className="table__data--history">{title}</td>
                 <td className="table__data--history">{date}</td>
                 <td className="table__data--history">{state}</td>
-                <td className="table__data--history--remove"><span className="data__delete--history" onClick={cancelReserveBook} id={`${_id}&&&${title}`}></span></td>
+                <td className="table__data--history--remove">
+                  <span 
+                    className="data__delete--history"
+                    onClick={ (e) => cancelReserveBook(e, setHistories)} 
+                    id={`${_id}&&&${title}`}>
+                  </span>
+                </td>
               </tr>
 
               }
