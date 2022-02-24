@@ -1,47 +1,43 @@
-My-book es una aplicación web adaptable a moviles, creada con el stack MERN. En esta app puedes ver tu historial de préstamo, 
-reservar libros y también cancelar los mismos. El lado del cliente esta desarrollado con react; el backend con node y express; 
-la base de datos es mongoDB, implementada con mongoose.
+# My book aplication
+
+## My-book is a adaptable web application, created with MERN stack. With this app you can see the loans history, reserve books and cancel too. The client side is developed with react; the backend with node and express; the database is mongoDB, implemented with mongoose.
+
+## Steps for its installation:
 
 
-
-
-PASOS PARA SU INSTALACIÓN.
-
-
-
-1). Instalación de la base de datos:
+### 1). Database installation:
 
   
-  -Instala mongoDB
+  #### -Install mongoDB.
   
-  -Activar el servicio de mongoDB
+  #### -Activate mongoDB service.
   
-  -Crear una base de datos llamada "my-book" en el puerto 27017, puedes cambiar el puerto en el archivo "/backend/app.js".
+  #### -Create a datebase called "my-book" at 27017 port.
   
-  -Agrega libros a una nueva colección llamada "books" (Un documento por cada libro; en el archivo "/backend/json/books.json" puedes encontrar ejemplos de libros y el formato de cada documento).
-  
-  
-2). Preparación del servidor 
+  #### -Agree books to a new collection called "books" (One document for each book; at "/backend/json/books.json" file  you can find books examples).
   
   
-  -Instala nodeJS.
-  
-  -Ejecuta el comando "npm install" en la consola mientras esta se ubica en /backend/, para instalar las dependencias. Asegurate que en la carpeta existan los archivos package.json y package-lock.json.
-  
-  -Ejecuta el conmando "node app.js" en la consola mientras estás en la ubicación /my-book/ para inicializar el servidor el puerto 4000 (Debe correr en el puerto 4000)
+### 2). Server preparation 
   
   
-3). Preparación de la interfaz gráfica 
+  #### -Install nodeJS.
+  
+  #### -Run  "npm install" command in the console while it's at /backend/, for install the dependencies.
+  
+  #### -RUn "node app.js" command in the console while it's at /my-book/ for the server start.
+  
+  
+### 3). Client side preparation 
 
 
-  -Ejecuta el comando "npm install" en la consola mientras esta se ubica en /my-book/, para instalar las dependencias. Asegurate que en la carpeta existan los archivos package.json y package-lock.json.
+  #### -Run  "npm install" command in the console while it's at /my-book/, for install the dependencies.
   
-  -Ejecuta el conmando "npx http-server -o" en la consola mientras estás en la ubicación /my-book/build para inicializar la aplicación.
+  #### -Run "npx http-server -o" command in the console while it's at /my-book/build para inicializar la aplicación.
   
-  -Abre en el navegador http://localhost:8080/.
+  #### -Open http://localhost:8080/ at your browser
   
   
-4). ¡LISTO!
+### 4). ¡Enjoy!
   
   
   
