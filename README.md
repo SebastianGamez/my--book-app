@@ -1,4 +1,4 @@
-# My book aplication
+# My book aplication ✏️
 
 ## My-book is a adaptable web application, created with MERN stack. With this app you can see the loans history, reserve books and cancel too. The client side is developed with react; the backend with node and express; the database is mongoDB, implemented with mongoose.
 
