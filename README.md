@@ -39,7 +39,6 @@
   
 ### 4). ¡Enjoy!
 
-## Also you can probe client side at: https://sebastiangamez.github.io/my--book-app/
 
 ## Contact Me
 
